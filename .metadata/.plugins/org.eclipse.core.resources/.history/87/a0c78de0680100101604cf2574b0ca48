@@ -1,0 +1,39 @@
+package hacom.prueba.reactiva.controller;
+
+
+import hacom.prueba.reactiva.model.TraceMsg;
+import hacom.prueba.reactiva.model.DateRangeRequest;
+import hacom.prueba.reactiva.service.TraceMsgService;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.util.Date;
+
+@RestController
+@RequestMapping("/trace")
+@RequiredArgsConstructor
+public class TraceMsgController {
+	
+	@Autowired
+	TraceMsgService service;
+
+    @PostMapping
+    public Mono<TraceMsg> insertTrace(@RequestBody TraceMsg traceMsg) {
+        return service.insertTraceMsg(traceMsg);
+    }
+
+    @GetMapping
+    public Flux<TraceMsg> getTraces(@RequestBody DateRangeRequest dateRange) {
+        return service.getTraceMsgsByDateRange(dateRange);
+    }
+	
+    public OffsetDateTime convertToOffsetDateTime(Date date) {
+        return date.toInstant().atOffset(ZoneOffset.UTC);
+    }
+    
+}

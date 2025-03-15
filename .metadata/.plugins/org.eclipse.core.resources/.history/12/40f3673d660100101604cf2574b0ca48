@@ -1,0 +1,5 @@
+package hacom.prueba.reactiva.config;
+
+public class MongoConfig {
+
+}

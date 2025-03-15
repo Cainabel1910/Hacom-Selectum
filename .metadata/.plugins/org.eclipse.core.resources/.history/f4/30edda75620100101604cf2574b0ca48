@@ -1,0 +1,19 @@
+package hacom.prueba.reactiva.model;
+
+import lombok.Data;
+import javax.validation.constraints.NotNull;
+import java.time.OffsetDateTime;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
+public class DateRangeRequest {
+	@NotNull
+    private OffsetDateTime from;
+    
+    @NotNull
+    private OffsetDateTime to;
+
+}

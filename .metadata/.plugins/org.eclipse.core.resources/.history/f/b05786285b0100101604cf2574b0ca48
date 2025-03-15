@@ -1,0 +1,5 @@
+package hacom.prueba.reactiva.Config;
+
+public class ConfigProperties {
+
+}

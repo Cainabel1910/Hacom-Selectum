@@ -1,0 +1,5 @@
+package hacom.prueba.reactiva.repository;
+
+public class TraceMsgRepository {
+
+}

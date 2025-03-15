@@ -1,0 +1,21 @@
+package hacom.prueba.reactiva.service;
+
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+import org.springframework.stereotype.Service;
+
+@Service
+public class InsertMetricService {
+
+    private final Counter insertCounter;
+
+    public InsertMetricService(MeterRegistry registry) {
+        this.insertCounter = Counter.builder("hacom.test.developer.insert.rx")
+                .description("Número de inserciones recibidas")
+                .register(registry);
+    }
+
+    public void incrementInsertCounter() {
+        insertCounter.increment();
+    }
+}

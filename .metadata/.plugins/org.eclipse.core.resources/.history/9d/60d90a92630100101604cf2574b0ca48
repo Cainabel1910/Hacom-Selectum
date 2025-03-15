@@ -1,0 +1,5 @@
+package hacom.prueba.reactiva.controller;
+
+public class TraceMsgController {
+
+}
