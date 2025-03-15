@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "99365700-f3a6-40c2-abd5-973d2b55f8af",
+		"name": "Hacom-Selectum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9594876"
+	},
+	"item": [
+		{
+			"name": "InsertTrace",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sessionId\": \"abc123\",\r\n  \"payload\": \"Mensaje de prueba\",\r\n  \"ts\": \"2025-03-14T12:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/trace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"trace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTraces",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"from\": \"2023-03-13T00:00:00+00:00\",\r\n  \"to\": \"2025-03-30T23:59:59+00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9898/trace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9898",
+					"path": [
+						"trace"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
